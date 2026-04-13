@@ -1,0 +1,46 @@
+{
+  "name": "Membership",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "description": "Email of the member"
+    },
+    "tier": {
+      "type": "string",
+      "enum": [
+        "gold",
+        "silver",
+        "bronze"
+      ],
+      "description": "Membership tier"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "cancelled",
+        "expired"
+      ],
+      "default": "active"
+    },
+    "billing_cycle": {
+      "type": "string",
+      "enum": [
+        "monthly",
+        "yearly"
+      ],
+      "default": "monthly"
+    },
+    "expires_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When the membership expires"
+    }
+  },
+  "required": [
+    "user_email",
+    "tier",
+    "status"
+  ]
+}

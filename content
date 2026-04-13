@@ -1,0 +1,56 @@
+{
+"name": "Content",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Content title"
+    },
+    "description": {
+      "type": "string",
+      "description": "Brief description"
+    },
+    "thumbnail": {
+      "type": "string",
+      "description": "Thumbnail image URL"
+    },
+    "video_url": {
+      "type": "string",
+      "description": "Video or content URL"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "investigation",
+        "behind_the_scenes",
+        "challenge",
+        "reaction",
+        "livestream",
+        "personal"
+      ],
+      "description": "Content category"
+    },
+    "min_tier": {
+      "type": "string",
+      "enum": [
+        "bronze",
+        "silver",
+        "gold"
+      ],
+      "description": "Minimum membership tier required to view"
+    },
+    "is_featured": {
+      "type": "boolean",
+      "default": false
+    },
+    "duration": {
+      "type": "string",
+      "description": "Duration of the content"
+    }
+  },
+  "required": [
+    "title",
+    "category",
+    "min_tier"
+  ]
+}
